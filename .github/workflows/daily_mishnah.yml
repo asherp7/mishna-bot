@@ -1,0 +1,37 @@
+name: Daily Mishnah Reminder
+
+on:
+  # Runs daily at 07:00 Israel time (UTC+3 = schedule at 04:00 UTC).
+  # If you want a different time, edit the cron expression.
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch: {}  # allows manual run
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run daily mishnah reminder
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          START_DATE: ${{ secrets.START_DATE }}
+          START_MASECHET: ${{ secrets.START_MASECHET }}
+          START_PEREK: ${{ secrets.START_PEREK }}
+          START_MISHNA: ${{ secrets.START_MISHNA }}
+          FORCE_REFRESH: ${{ secrets.FORCE_REFRESH }}   # optional
+        run: |
+          python mishnah_reminder.py
