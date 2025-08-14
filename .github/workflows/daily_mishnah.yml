@@ -34,4 +34,4 @@ jobs:
           START_MISHNA: ${{ secrets.START_MISHNA }}
           FORCE_REFRESH: ${{ secrets.FORCE_REFRESH }}   # optional
         run: |
-          python mishnah_reminder.py
+          python mishna_reminder.py
