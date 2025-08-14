@@ -119,11 +119,11 @@ def format_message(mishna1, mishna2, start_date):
     header = "משניות לעילוי נשמת אלישע לוי לוינשטרן 🕯️\n\n"
 
     if masechet1 == masechet2 and perek1 == perek2:
-        message = f"         <b>{masechet1}</b> פרק <b>{hebrew_numbers[perek1-1]}</b> משניות <b>{hebrew_numbers[num1-1]}</b> - <b>{hebrew_numbers[num2-1]}</b>"
+        message = f"           <b>{masechet1}</b> פרק <b>{hebrew_numbers[perek1-1]}</b> משניות <b>{hebrew_numbers[num1-1]}</b> - <b>{hebrew_numbers[num2-1]}</b>"
     else:
         message = (
-        f"         <b>{masechet1}</b> פרק <b>{hebrew_numbers[perek1-1]}</b> משנה <b>{hebrew_numbers[num1-1]}</b>"
-        f"         <b>{masechet2}</b> פרק <b>{hebrew_numbers[perek2-1]}</b> משנה <b>{hebrew_numbers[num2-1]}</b>"
+        f"           <b>{masechet1}</b> פרק <b>{hebrew_numbers[perek1-1]}</b> משנה <b>{hebrew_numbers[num1-1]}</b>"
+        f"           <b>{masechet2}</b> פרק <b>{hebrew_numbers[perek2-1]}</b> משנה <b>{hebrew_numbers[num2-1]}</b>"
         )
         
     return header + message
