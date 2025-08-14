@@ -32,6 +32,6 @@ jobs:
           START_MASECHET: ${{ secrets.START_MASECHET }}
           START_PEREK: ${{ secrets.START_PEREK }}
           START_MISHNA: ${{ secrets.START_MISHNA }}
-          FORCE_REFRESH: ${{ secrets.FORCE_REFRESH }}   # optional
+
         run: |
-          python mishna_reminder.py
+          python mishnah_reminder.py
