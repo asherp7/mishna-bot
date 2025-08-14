@@ -88,7 +88,7 @@ def format_message(mishna1, mishna2, start_date):
     masechet1, perek1, num1 = mishna1
     masechet2, perek2, num2 = mishna2
 
-    header = "📜 Daily Mishna Reminder 📜\n\n"
+    header = "📜 משניות לעילוי נשמת אלישע לוינשטרן 📜\n\n"
 
     if masechet1 == masechet2 and perek1 == perek2:
         message = f"Today's learning is:\n<b>{masechet1}, Perek {perek1}, Mishnayot {num1}-{num2}</b>"
