@@ -1,10 +1,10 @@
 name: Daily Mishnah Reminder
 
 on:
-  # Runs daily at 07:00 Israel time (UTC+3 = schedule at 04:00 UTC).
+  # Runs daily at 09:00 Israel time (UTC+3 = schedule at 06:00 UTC).
   # If you want a different time, edit the cron expression.
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 6 * * *'
   workflow_dispatch: {}  # allows manual run
 
 jobs:
